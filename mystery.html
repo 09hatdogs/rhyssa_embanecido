@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Books - Bound Treasures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #483d8b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mystery</h1>
+    <a href="home.html" style="color: white; text-decoration: none;">Back to Home</a>
+    
+
+    <div class="book">
+        <h2>The Silent Witness</h2>
+        <p><b>Author:</b> Niqyla</p>
+        <p><b>Synopsis:</b> In a sleepy coastal town, a journalist stumbles upon a decades-old cold case — and a mysterious stranger who seems to know too much. As the truth unravels, danger lurks closer than she ever imagined.</p>
+        <p><b>Price:</b> $12.99</p>
+        <button onclick="checkout('The Silent Witness', '12.99')">Buy Now</button>
+    </div>
+    
+    <div class="book">
+        <h2>Shadows of the Manor</h2>
+        <p><b>Author:</b> Llyana</p>
+        <p><b>Synopsis:</b> When a reclusive billionaire invites six strangers to his crumbling estate, dark secrets begin to surface — and someone among them is willing to kill to keep the past buried.</p>
+        <p><b>Price:</b> $18.99</p>
+        <button onclick="checkout('Shadows of the Manor', '18.99')">Buy Now</button>
+    </div>
+
+     <script>
+        function checkout(name, price) {
+            let cart = [{ name, price: Number(price) || 0, quantity: 1 }];
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "checkout.html"; // Redirects to the checkout page
+        }
+    </script>
+       
+</body>
+</html>

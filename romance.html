@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Books - Bound Treasures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Romance</h1>
+    <a href="home.html" style="color: white; text-decoration: none;">Back to Home</a>
+    
+
+    <div class="book">
+        <h2>The Starlit Promise</h2>
+        <p><b>Author:</b> Yllana</p>
+        <p><b>Synopsis:</b> A gifted astronomer meets a charming artist under the shimmering skies of a seaside town. Together, they chase their dreams and unlock a love written among the stars.</p>
+        <p><b>Price:</b> $12.99</p>
+        <button onclick="checkout('The Starlit Promise', '12.99')">Buy Now</button>
+    </div>
+    
+    <div class="book">
+        <h2>Whispers of Autumn</h2>
+        <p><b>Author:</b> Celeste</p>
+        <p><b>Synopsis:</b> When a reserved bookshop owner crosses paths with a spontaneous traveler during the vibrant fall season, their fleeting encounters blossom into a deep, once-in-a-lifetime romance.</p>
+        <p><b>Price:</b> $14.99</p>
+        <button onclick="checkout('Whispers of Autumn', '14.99')">Buy Now</button>
+    </div>
+
+     <script>
+        function checkout(name, price) {
+            let cart = [{ name, price: Number(price) || 0, quantity: 1 }];
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "checkout.html"; // Redirects to the checkout page
+        }
+    </script>
+    
+</body>
+</html>

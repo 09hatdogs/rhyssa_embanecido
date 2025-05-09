@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Bound Treasures Online Book Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            margin-bottom: 20px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .checkout-section {
+            text-align: center;
+            padding: 40px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .checkout-section h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="number"], select {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .checkout-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+            display: inline-block;
+        }
+
+        .checkout-button:hover {
+            background-color: #45a049;
+        }
+
+        .notification {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent form from submitting the default way
+
+            // Display notification
+            var notification = document.getElementById("notification");
+            notification.style.display = "block";
+
+            // Redirect to shipping information page after 2 seconds
+            setTimeout(function() {
+                window.location.href = "shipping.html";
+            }, 2000); // 2-second delay
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header for Checkout Page -->
+    <header>
+        <h1>Checkout</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="home.html">Home</a>
+        
+    </nav>
+
+    <!-- Checkout Section -->
+    <div class="checkout-section">
+        <h2>Enter Your Details</h2>
+        <form onsubmit="submitForm(event)"> <!-- Added onsubmit event -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Shipping Address</label>
+                <input type="text" id="address" name="address" placeholder="123 Main St" required>
+            </div>
+            <div class="form-group">
+                <label for="payment">Payment Method</label>
+                <select id="payment" name="payment">
+                    <option value="gcash">Gcash</option>
+                    <option value="cod">Cash on Delivery</option>
+                </select>
+            </div>
+
+            <button type="submit" class="checkout-button">Place Order</button>
+        </form>
+
+        <!-- Notification -->
+        <div id="notification" class="notification">
+            Order placed successfully! Redirecting to Shipping Information...
+        </div>
+    </div>
+
+
+</body>
+</html>

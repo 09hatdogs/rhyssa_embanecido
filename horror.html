@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8a3939;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Horror</h1>
+    <a href="home.html" style="color: white; text-decoration: none;">Back to Home</a>
+    
+
+    <div class="book">
+        <h2>Whispers in the Cellar</h2>
+        <p><b>Author:</b> Cordova </p>
+        <p><b>Synopsis:</b> Beneath an old farmhouse, a cellar sealed for generations hides more than cobwebs. When a family moves in and starts hearing voices from below, they uncover a chilling history of betrayal, madness, and a spirit that refuses to rest.</p>
+        <p><b>Price:</b> $12.99</p>
+        <button onclick="checkout('Whispers in the Cellar', '12.99')">Buy Now</button>
+    </div>
+    
+    <div class="book">
+        <h2>The Forgotten Ward</h2>
+        <p><b>Author:</b> Natasha </p>
+        <p><b>Synopsis:</b>A medical student volunteering in an abandoned psychiatric hospital discovers a hidden wing untouched since the 1940s. As he delves into the patients’ journals, he realizes the last doctor there may never have left — and neither have his methods.</p>
+        <p><b>Price:</b> $18.99</p>
+        <button onclick="checkout('The Forgotten Ward', '18.99')">Buy Now</button>
+    </div>
+
+     <script>
+        function checkout(name, price) {
+            let cart = [{ name, price: Number(price) || 0, quantity: 1 }];
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "checkout.html"; // Redirects to the checkout page
+        }
+    </script>
+       
+</body>
+</html>

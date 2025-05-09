@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historical Fiction Books - Bound Treasures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8b4513;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        img {
+            width: 200px; /* Adjust the width as needed */
+            height: auto;
+            display: block;
+            margin: 0 auto 20px; /* Center the image and add margin below */
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Historical Fiction</h1>
+    <a href="home.html" style="color: white; text-decoration: none;">Back to Home</a>
+    
+
+    <div class="book">
+        <h2>Secret Singer</h2>
+        <p><b>Author:</b> Lin Wei </p>
+        <p><b>Synopsis:</b> Jazz singer Mei leads a double life as a spy for the Chinese resistance. Using her nightclub connections, she gathers intel, navigating gangsters and agents.  Her life gets complicated when she falls for an American journalist as war approaches.</p>
+        <p><b>Price:</b> 200.59</p>
+        <button onclick="checkout('Secret Singer', '200.59')">Buy Now</button>
+    </div>
+    
+    <div class="book">
+        <h2>The Romanov Last Days</h2>
+        <p><b>Author:</b> Cathy Volkovian </p>
+        <p><b>Synopsis:</b> Grand Duchess Anastasia recounts her family's final years, from palace luxury to tragic imprisonment.  She shares her perspective on the crumbling empire and her family's fate during the revolution.</p>
+        <p><b>Price:</b> 290.40</p>
+        <button onclick="checkout('The Romanov Last Days', '290.40')">Buy Now</button>
+    </div>
+
+    <div class="book">
+        <h2>The Pirate's Code</h2>
+        <p><b>Author:</b> Izzy Moreau </p>
+        <p><b>Synopsis:</b> Wrongly accused of piracy, sailor Adler Riego joins pirate captain Cassie Hidalgo to clear his name and seek revenge.  They sail dangerous waters, battling rivals and the Navy, their alliance turning into romance amidst the adventure.</p>
+        <p><b>Price:</b> 350.25</p>
+        <button onclick="checkout('The Pirate's Code', '350.25')">Buy Now</button>
+    </div>
+    
+    <script>
+        function checkout(name, price) {
+            let cart = [{ name, price: Number(price) || 0, quantity: 1 }];
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "checkout.html"; // Redirects to the checkout page
+        }
+    </script>
+    
+</body>
+</html>

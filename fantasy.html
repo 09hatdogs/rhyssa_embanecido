@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Books - Bound Treasures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #6a5acd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .book {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 8px;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fantasy</h1>
+    <a href="home.html" style="color: white; text-decoration: none;">Back to Home</a>
+
+    <div class="book">
+        <h2>Starless Nights</h2>
+        <p><b>Synopsis:</b> Lin Xiangchen is the Priestess of the Moon, she can see read the stars and fortune as well as misfortune to her people. However, the life of a Priestess consists of nothing but loneliness: she can neither leave the palace nor meet with anyone but the Emperor and his advisors.</p>
+        <p><b>Author:</b> Zephyr Nightshade </p>
+        <p><b>Price:</b> Php100.99</p>
+        <button onclick="checkout('Starless Nights', '100.99')">Buy Now</button>
+    </div>
+    
+    <div class="book">
+        <h2>Two of One Kind</h2>
+        <p><b>Synopsis:</b> Waking up in a different body was just the beginning</p>
+        <p>Dr. Alistair Finch didn't expect to die, but Riley sought it. Somehow, their soul's crossed, and Dr. Finch woke up in Riley's body.</p>
+        <p><b>Author:</b> Rhys Shadowwalker</p>
+        <p><b>Price:</b> Php190.99</p>
+        <button onclick="checkout('Two of One Kind', '190.99')">Buy Now</button>
+    </div>
+
+    <div class="book">
+        <h2>The Heart of a Healer</h2>
+        <p><b>Synopsis:</b> Seraphina wants to be a physician. She has a burning passion for learning science and the art of medicine and wants to help the poor to have access to decent medical treatment. But her gender doesn't allow women, who are regarded as mere homemakers, to have a voice in a male-dominated society. But Seraphina dares to follow her heart's desire when she learns of the Imperial exams for doctors. The problem is, the exam is strictly for males. </p>
+        <p><b>Author:</b> Emberlyn Cruiz </p>
+        <p><b>Price:</b> Php250.89</p>
+        <button onclick="checkout('The Heart of a Healer', '250.89')">Buy Now</button>
+    </div>
+    
+    <script>
+        function checkout(name, price) {
+            let cart = [{ name, price: Number(price) || 0, quantity: 1 }];
+            localStorage.setItem("cart", JSON.stringify(cart));
+            window.location.href = "checkout.html"; // Redirects to the checkout page
+        }
+    </script>
+</body>
+</html>

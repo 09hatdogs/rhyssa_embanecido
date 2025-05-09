@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Bound Treasures Online Book Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+        }
+
+        .cart-section {
+            text-align: center;
+            padding: 40px;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-section h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .cart-section a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #333;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .cart-details {
+            display: none;
+            text-align: left;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Cart</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="home.html">Homepage</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <!-- Cart Section -->
+    <div class="cart-section">
+        <h1>Your Cart</h1>
+        <a id="shippingLink">Shipping Information</a>
+        <a id="orderSummaryLink">Order Summary</a>
+    </div>
+
+    <!-- Details Section -->
+    <div id="shipping" class="cart-details">
+        <h2>Shipping Information</h2>
+        <p><strong>Shipping Method:</strong> Standard (5-10 business days) or Express (2-4 business days).</p>
+        <p><strong>Delivery Address:</strong> Enter your address at checkout.</p>
+        <p><strong>Tracking:</strong> A tracking number will be provided once your order is shipped.</p>
+    </div>
+
+    <div id="orderSummary" class="cart-details">
+        <h2>Order Summary</h2>
+        <p><strong>Items in Cart:</strong> 2</p>
+        <p><strong>Subtotal:</strong> $45.00</p>
+        <p><strong>Shipping Fee:</strong> $5.00</p>
+        <p><strong>Total:</strong> $50.00</p>
+    </div>
+
+    
+    <script>
+        // Function to hide all sections
+        function hideAllSections() {
+            document.getElementById('shipping').style.display = 'none';
+            document.getElementById('orderSummary').style.display = 'none';
+        }
+
+        // Event listeners for links
+        document.getElementById('shippingLink').addEventListener('click', function() {
+            hideAllSections();
+            document.getElementById('shipping').style.display = 'block';
+        });
+
+        document.getElementById('orderSummaryLink').addEventListener('click', function() {
+            hideAllSections();
+            document.getElementById('orderSummary').style.display = 'block';
+        });
+    </script>
+
+</body>
+</html>
